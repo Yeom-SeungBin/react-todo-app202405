@@ -21,7 +21,10 @@ function App() {
             <Route path='/' element={<TodoTemplate />} />
             <Route path='/login' element={<Login />} />
             <Route path='/join' element={<Join />} />
-            <Route path='/oauth/kako' element={KakaoLoginHandler} />
+            <Route
+              path='/oauth/kakao'
+              element={<KakaoLoginHandler />}
+            />
           </Routes>
         </div>
 

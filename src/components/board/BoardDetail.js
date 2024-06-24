@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {
+  createSearchParams,
   useNavigate,
   useParams,
   useSearchParams,
@@ -18,10 +19,13 @@ const BoardDetail = () => {
 
   const navigate = useNavigate();
 
+  const pageParam = createSearchParams({ page, size }).toString();
+
   const goToList = () => {
     // navigate(`/board/list?page=${page}&size=${size}`);
-    navigate('/board/list', {
-      state: `page=${page}&size=${size}`,
+    navigate({
+      pathname: `/board/list`,
+      search: pageParam,
     });
   };
 
